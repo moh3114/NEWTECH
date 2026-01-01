@@ -78,6 +78,30 @@ class IceWizard extends Wizard {
   }
 }
 
+class Duel {
+  constructor(wizardA, wizardB) {
+    this.wizardA = wizardA;
+    this.wizardB = wizardB;
+  }
+
+  start() {
+    console.log(`Duel starts between ${this.wizardA.name} and ${this.wizardB.name}!`);
+
+    let attacker = this.wizardA;
+    let defender = this.wizardB;
+
+    while (this.a.isAlive() && this.b.isAlive()) {
+      attacker.castSpell(defender);
+
+      if (!defender.isAlive()) break;
+
+      [attacker, defender] = [defender, attacker]; // swap wizards
+    }
+
+    const winner = this.a.isAlive() ? this.a : this.b;
+    console.log(`🏆 ${winner.name} wins the duel!`);
+  }
+}
 
 
 
