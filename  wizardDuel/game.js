@@ -48,4 +48,36 @@ class Wizard {
   }
 }
 
+class FireWizard extends Wizard {
+  castSpell(target) {
+    const cost = 20;
+    const damage = 30;
+
+    if (!this.spendMana(cost)) {
+      console.log(`${this.name} tried to cast Fireball but has no mana!`);
+      return;
+    }
+
+    console.log(`${this.name} casts Fireball at ${target.name}! 🔥`);
+    target.takeDamage(damage);
+  }
+}
+
+class IceWizard extends Wizard {
+  castSpell(target) {
+    const cost = 10;
+    const damage = 15;
+
+    if (!this.spendMana(cost)) {
+      console.log(`${this.name} tried to cast Ice Spike but has no mana!`);
+      return;
+    }
+
+    console.log(`${this.name} casts Ice Spike at ${target.name}! ❄️`);
+    target.takeDamage(damage);
+  }
+}
+
+
+
 
