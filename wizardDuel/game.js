@@ -4,7 +4,7 @@ class Wizard {
   #health = 1000;
   #mana = 1000;
 
-  constructor(name) {
+  constructor(name, health, mana) {
     this.name = name;
     this.#health = health;
     this.#mana = mana;
@@ -90,7 +90,7 @@ class Duel {
     let attacker = this.wizardA;
     let defender = this.wizardB;
 
-    while (this.a.isAlive() && this.b.isAlive()) {
+    while (this.wizardA.isAlive() && this.wizardB.isAlive()) {
       attacker.castSpell(defender);
 
       if (!defender.isAlive()) break;
