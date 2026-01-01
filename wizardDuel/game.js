@@ -98,10 +98,17 @@ class Duel {
       [attacker, defender] = [defender, attacker]; // swap wizards
     }
 
-    const winner = this.a.isAlive() ? this.a : this.b;
-    console.log(`🏆 ${winner.name} wins the duel!`);
+    const winner = this.wizardA.isAlive() ? this.wizardA : this.wizardB;
+    console.log(`${winner.name} wins the duel!`);
   }
 }
+
+const fireWiz = new FireWizard("Firo", 100, 60);
+const iceWiz = new IceWizard("Ico", 120, 80);
+
+const duel = new Duel(fireWiz, iceWiz);
+duel.start();
+
 
 
 
